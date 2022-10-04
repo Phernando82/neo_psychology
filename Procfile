@@ -1,0 +1,1 @@
+web: gunicorn psychology.wsgi --log-file -

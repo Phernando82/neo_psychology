@@ -97,7 +97,7 @@ if AWS_ACCESS_KEY_ID:
     AWS_PRELOAD_METADATA = True
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_DEFAULT_ACL = None
 
     COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
@@ -123,13 +123,19 @@ if AWS_ACCESS_KEY_ID:
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+default_db_url = 'sqlite:///' + os.path.join(BASE_DIR / 'db.sqlite3')
 
+parse_database = partial(dj_database_url.parse, conn_max_age=600)
+
+DATABASES = {
+    'default': config('DATABASE_URL', default=default_db_url, cast=parse_database)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

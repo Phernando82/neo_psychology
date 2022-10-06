@@ -10,6 +10,7 @@ django-s3-folder-storage = "*"
 python-decouple = "*"
 collectfast = "*"
 dj-database-url = "*"
+pdfrw = "*"
 
 [dev-packages]
 flake8 = "*"

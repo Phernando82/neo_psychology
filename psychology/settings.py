@@ -82,6 +82,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 COLLECTFAST_ENABLED = False
 STATIC_URL = 'static/'
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'NEO1_form.pdf')
+OUTPUT_PATH = os.path.join(BASE_DIR, 'NEO1_edit.pdf')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 

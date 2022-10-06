@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7305d305b89c31a90ed1d5e8347d4f789b6a0e8c5c68f270a611352a2eec2e57"
+            "sha256": "8524c1bf9ead7e8d31a22ca94175618231001011bf4a53b3dc33346187afb4fb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,19 +26,18 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:2c9004c1f0a47807c73247abe8cb2b8a7054c34b9cf6e90f448d51560de20ca1",
-                "sha256:714b06755bd76b2001f7099a8e406604c0a0e76a8ff0425480bf1555bcbecee1"
+                "sha256:bcc579e801774cb2c7dda87ff985feda1ae7e10591d11ef37526363139138bd4"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.24.85"
+            "version": "==1.24.87"
         },
         "botocore": {
             "hashes": [
-                "sha256:06b3ebacbe9a532074db4ad68040235e3c7bd52741e3ff6710cef8ab144ecdfe",
-                "sha256:2b4c86178b5a5a2baa0a065aaf9ef9d33a7ac67bf3f30e39005de151b0408cac"
+                "sha256:216de9751116d0d1cc3901e26d95a5c9a30ecb6973ae6147af1cf504858d845a",
+                "sha256:c4cbd22056ace4c7aa99e62e8ae629865ab80cc8bbf7c6d68ccf0f768f0034b6"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==1.27.85"
+            "version": "==1.27.87"
         },
         "collectfast": {
             "hashes": [
@@ -94,6 +93,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==1.0.1"
+        },
+        "pdfrw": {
+            "hashes": [
+                "sha256:0dc0494a0e6561b268542b28ede2280387c2728114f117d3bb5d8e4787b93ef4",
+                "sha256:758289edaa3b672e9a1a67504be73c18ec668d4e5b9d5ac9cbc0dc753d8d196b"
+            ],
+            "index": "pypi",
+            "version": "==0.4"
         },
         "python-dateutil": {
             "hashes": [

@@ -2,7 +2,6 @@ from django.apps import AppConfig
 import pdfrw
 
 
-
 class BaseConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'base'
@@ -15,7 +14,7 @@ WIDGET_SUBTYPE_KEY = '/Widget'
 
 
 def write_pdf(input_pdf, output_pdf, data_dict):
-    template_pdf = pdfrw.PdfReader('NEO1_form.pdf')
+    template_pdf = pdfrw.PdfReader(input_pdf)
 
     annotations = template_pdf.pages[0][ANNOT_KEY]
 
@@ -31,4 +30,4 @@ def write_pdf(input_pdf, output_pdf, data_dict):
         annotation.update(pdfrw.PdfDict(Ff=1))
 
     template_pdf.Root.AcroForm.update(pdfrw.PdfDict(NeedAppearances=pdfrw.PdfObject('true')))
-    pdfrw.PdfWriter().write('NEO1_edit.pdf', template_pdf)
+    pdfrw.PdfWriter().write(output_pdf, template_pdf)

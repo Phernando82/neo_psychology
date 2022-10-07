@@ -11,6 +11,7 @@ python-decouple = "*"
 collectfast = "*"
 dj-database-url = "*"
 pdfrw = "*"
+reportlab = "*"
 
 [dev-packages]
 flake8 = "*"

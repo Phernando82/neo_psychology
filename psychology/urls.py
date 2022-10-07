@@ -20,5 +20,6 @@ from base import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('respostas_teste/', views.respostas_teste, name='respostas_teste')
+    path('respostas_teste/', views.respostas_teste, name='respostas_teste'),
+    path('respostas_teste/download/', views.download_pdf_file),
 ]

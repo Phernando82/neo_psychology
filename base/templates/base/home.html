@@ -14,15 +14,26 @@
 
 <body>
 <!-- cabeçalho -->
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Teste de personalidade</a>
+            </nav>
+        </div>
+    </div>
+</div>
 <!-- tabela -->
 <div class="container">
-    <form action="{% url 'respostas_teste' %}" method="POST">
+    <form action="{% url 'respostas_teste' %}" method="POST" data-toggle="validator">
         {% csrf_token %}
         <table class="table">
             <thead class="thead-light">
             <tr>
-                <th scope="col"></th>
+                <th scope="col">DF &nbsp; Discordo Fortemente &nbsp; &nbsp; &nbsp; D &nbsp; Discordo &nbsp; &nbsp;
+                    &nbsp; N &nbsp; Neutro
+                    &nbsp; &nbsp; &nbsp; C &nbsp; Concordo &nbsp; &nbsp; &nbsp; CF &nbsp; Concordo Fortemente
+                </th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -32,11 +43,12 @@
             </thead>
             <tbody>
             <tr>
-                <div>
+                <div class="form-group">
                     <th scope="row-12">1 - Sou uma pessoa despreocupada.</th>
                     <td>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="row1" value="DF" id="radio1_row1">
+                            <input class="form-check-input" type="radio" name="row1" value="DF" id="radio1_row1"
+                                   required>
                             <label class="form-check-label" for="radio1_row1">
                                 DF
                             </label>
@@ -44,7 +56,8 @@
                     </td>
                     <td>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="row1" value="D" id="radio2_row1">
+                            <input class="form-check-input" type="radio" name="row1" value="D" id="radio2_row1"
+                                   required>
                             <label class="form-check-label" for="radio2_row1">
                                 D
                             </label>
@@ -52,7 +65,8 @@
                     </td>
                     <td>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="row1" value="N" id="radio3_row1">
+                            <input class="form-check-input" type="radio" name="row1" value="N" id="radio3_row1"
+                                   required>
                             <label class="form-check-label" for="radio3_row1">
                                 N
                             </label>
@@ -60,7 +74,8 @@
                     </td>
                     <td>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="row1" value="C" id="radio4_row1">
+                            <input class="form-check-input" type="radio" name="row1" value="C" id="radio4_row1"
+                                   required>
                             <label class="form-check-label" for="radio4_row1">
                                 C
                             </label>
@@ -68,1007 +83,1195 @@
                     </td>
                     <td>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="row1" value="CF" id="radio5_row1">
+                            <input class="form-check-input" type="radio" name="row1" value="CF" id="radio5_row1"
+                                   required>
                             <label class="form-check-label" for="radio5_row1">
                                 CF
                             </label>
                         </div>
                     </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">2 - Gosto realmente da maioria das pessoas que encontro.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row2" value="DF" id="radio1_row2">
-                        <label class="form-check-label" for="radio1_row2">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row2" value="D" id="radio2_row2">
-                        <label class="form-check-label" for="radio2_row2">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row2" value="N" id="radio3_row2">
-                        <label class="form-check-label" for="radio3_row2">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row2" value="C" id="radio4_row2">
-                        <label class="form-check-label" for="radio4_row2">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row2" value="CF" id="radio5_row2">
-                        <label class="form-check-label" for="radio5_row2">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">2 - Gosto realmente da maioria das pessoas que encontro.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row2" value="DF" id="radio1_row2"
+                                   required>
+                            <label class="form-check-label" for="radio1_row2">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row2" value="D" id="radio2_row2"
+                                   required>
+                            <label class="form-check-label" for="radio2_row2">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row2" value="N" id="radio3_row2"
+                                   required>
+                            <label class="form-check-label" for="radio3_row2">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row2" value="C" id="radio4_row2"
+                                   required>
+                            <label class="form-check-label" for="radio4_row2">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row2" value="CF" id="radio5_row2"
+                                   required>
+                            <label class="form-check-label" for="radio5_row2">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">3 - Tenho uma imaginação muito fértil.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row3" value="DF" id="radio1_row3">
-                        <label class="form-check-label" for="radio1_row3">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row3" value="D" id="radio2_row3">
-                        <label class="form-check-label" for="radio2_row3">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row3" value="N" id="radio3_row3">
-                        <label class="form-check-label" for="radio3_row3">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row3" value="C" id="radio4_row3">
-                        <label class="form-check-label" for="radio4_row3">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row3" value="CF" id="radio5_row3">
-                        <label class="form-check-label" for="radio5_row3">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">3 - Tenho uma imaginação muito fértil.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row3" value="DF" id="radio1_row3"
+                                   required>
+                            <label class="form-check-label" for="radio1_row3">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row3" value="D" id="radio2_row3"
+                                   required>
+                            <label class="form-check-label" for="radio2_row3">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row3" value="N" id="radio3_row3"
+                                   required>
+                            <label class="form-check-label" for="radio3_row3">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row3" value="C" id="radio4_row3"
+                                   required>
+                            <label class="form-check-label" for="radio4_row3">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row3" value="CF" id="radio5_row3"
+                                   required>
+                            <label class="form-check-label" for="radio5_row3">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">4 - Tendo a ser descrente frente às intenções dos outros.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row4" value="DF" id="radio1_row4">
-                        <label class="form-check-label" for="radio1_row4">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row4" value="D" id="radio2_row4">
-                        <label class="form-check-label" for="radio2_row4">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row4" value="N" id=radio3_row4">
-                        <label class="form-check-label" for="radio3_row4">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row4" value="C" id="radio4_row4">
-                        <label class="form-check-label" for="radio4_row4">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row4" value="CF" id="radio5_row4">
-                        <label class="form-check-label" for="radio5_row4">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">4 - Tendo a ser descrente frente às intenções dos outros.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row4" value="DF" id="radio1_row4"
+                                   required>
+                            <label class="form-check-label" for="radio1_row4">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row4" value="D" id="radio2_row4"
+                                   required>
+                            <label class="form-check-label" for="radio2_row4">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row4" value="N" id=radio3_row4" required>
+                            <label class="form-check-label" for="radio3_row4">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row4" value="C" id="radio4_row4"
+                                   required>
+                            <label class="form-check-label" for="radio4_row4">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row4" value="CF" id="radio5_row4"
+                                   required>
+                            <label class="form-check-label" for="radio5_row4">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">5 - Sou conhecido pela minha prudência e bom senso.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row5" value="DF" id="radio1_row5">
-                        <label class="form-check-label" for="radio1_row5">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row5" value="D" id="radio2_row5">
-                        <label class="form-check-label" for="radio2_row5">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row5" value="N" id="radio3_row5">
-                        <label class="form-check-label" for="radio3_row5">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row5" value="C" id="radio4_row5">
-                        <label class="form-check-label" for="radio4_row5">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row5" value="CF" id="radio5_row5">
-                        <label class="form-check-label" for="radio5_row5">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">5 - Sou conhecido pela minha prudência e bom senso.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row5" value="DF" id="radio1_row5"
+                                   required>
+                            <label class="form-check-label" for="radio1_row5">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row5" value="D" id="radio2_row5"
+                                   required>
+                            <label class="form-check-label" for="radio2_row5">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row5" value="N" id="radio3_row5"
+                                   required>
+                            <label class="form-check-label" for="radio3_row5">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row5" value="C" id="radio4_row5"
+                                   required>
+                            <label class="form-check-label" for="radio4_row5">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row5" value="CF" id="radio5_row5"
+                                   required>
+                            <label class="form-check-label" for="radio5_row5">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">6 - Muitas vezes, fico iriitado(a) com a maneira como as pessoas me tratam.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row6" value="DF" id="radio1_row6">
-                        <label class="form-check-label" for="radio1_row6">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row6" value="D" id="radio2_row6">
-                        <label class="form-check-label" for="radio2_row6">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row6" value="N" id="radio3_row6">
-                        <label class="form-check-label" for="radio3_row6">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row6" value="C" id="radio4_row6">
-                        <label class="form-check-label" for="radio4_row6">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row6" value="CF" id="radio5_row6">
-                        <label class="form-check-label" for="radio5_row6">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">6 - Muitas vezes, fico iriitado(a) com a maneira como as pessoas me tratam.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row6" value="DF" id="radio1_row6"
+                                   required>
+                            <label class="form-check-label" for="radio1_row6">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row6" value="D" id="radio2_row6"
+                                   required>
+                            <label class="form-check-label" for="radio2_row6">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row6" value="N" id="radio3_row6"
+                                   required>
+                            <label class="form-check-label" for="radio3_row6">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row6" value="C" id="radio4_row6"
+                                   required>
+                            <label class="form-check-label" for="radio4_row6">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row6" value="CF" id="radio5_row6"
+                                   required>
+                            <label class="form-check-label" for="radio5_row6">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">7 - Não gosto de multidões e por isso as evito.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row7" value="DF" id="radio1_row7">
-                        <label class="form-check-label" for="radio1_row7">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row7" value="D" id="radio2_row7">
-                        <label class="form-check-label" for="radio2_row7">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row7" value="N" id="radio3_row7">
-                        <label class="form-check-label" for="radio3_row7">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row7" value="C" id="radio4_row7">
-                        <label class="form-check-label" for="radio4_row7">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row7" value="CF" id="radio5_row7">
-                        <label class="form-check-label" for="radio5_row7">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">7 - Não gosto de multidões e por isso as evito.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row7" value="DF" id="radio1_row7"
+                                   required>
+                            <label class="form-check-label" for="radio1_row7">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row7" value="D" id="radio2_row7"
+                                   required>
+                            <label class="form-check-label" for="radio2_row7">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row7" value="N" id="radio3_row7"
+                                   required>
+                            <label class="form-check-label" for="radio3_row7">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row7" value="C" id="radio4_row7"
+                                   required>
+                            <label class="form-check-label" for="radio4_row7">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row7" value="CF" id="radio5_row7"
+                                   required>
+                            <label class="form-check-label" for="radio5_row7">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">8 - Assuntos de estética e de arte não são muito importantes para mim.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row8" value="DF" id="radio1_row8">
-                        <label class="form-check-label" for="radio1_row8">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row8" value="D" id="radio2_row8">
-                        <label class="form-check-label" for="radio2_row8">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row8" value="N" id="radio3_row8">
-                        <label class="form-check-label" for="radio3_row8">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row8" value="C" id="radio4_row8">
-                        <label class="form-check-label" for="radio4_row8">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row8" value="CF" id="radio5_row8">
-                        <label class="form-check-label" for="radio5_row8">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">8 - Assuntos de estética e de arte não são muito importantes para mim.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row8" value="DF" id="radio1_row8"
+                                   required>
+                            <label class="form-check-label" for="radio1_row8">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row8" value="D" id="radio2_row8"
+                                   required>
+                            <label class="form-check-label" for="radio2_row8">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row8" value="N" id="radio3_row8"
+                                   required>
+                            <label class="form-check-label" for="radio3_row8">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row8" value="C" id="radio4_row8"
+                                   required>
+                            <label class="form-check-label" for="radio4_row8">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row8" value="CF" id="radio5_row8"
+                                   required>
+                            <label class="form-check-label" for="radio5_row8">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">9 - Não sou dissimulado(a) e nem espertalhão(ona).</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row9" value="DF" id="radio1_row9">
-                        <label class="form-check-label" for="radio1_row9">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row9" value="D" id="radio2_row9">
-                        <label class="form-check-label" for="radio2_row9">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row9" value="N" id="radio3_row9">
-                        <label class="form-check-label" for="radio3_row9">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row9" value="C" id="radio4_row9">
-                        <label class="form-check-label" for="radio4_row9">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row9" value="CF" id="radio5_row9">
-                        <label class="form-check-label" for="radio5_row9">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">9 - Não sou dissimulado(a) e nem espertalhão(ona).</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row9" value="DF" id="radio1_row9"
+                                   required>
+                            <label class="form-check-label" for="radio1_row9">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row9" value="D" id="radio2_row9"
+                                   required>
+                            <label class="form-check-label" for="radio2_row9">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row9" value="N" id="radio3_row9"
+                                   required>
+                            <label class="form-check-label" for="radio3_row9">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row9" value="C" id="radio4_row9"
+                                   required>
+                            <label class="form-check-label" for="radio4_row9">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row9" value="CF" id="radio5_row9"
+                                   required>
+                            <label class="form-check-label" for="radio5_row9">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">10 - Prefiro deixar as opções em aberto que planejar tudo com antecedência.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row10" value="DF" id="radio1_row10">
-                        <label class="form-check-label" for="radio1_row10">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row10" value="D" id="radio2_row10">
-                        <label class="form-check-label" for="radio2_row10">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row10" value="N" id="radio3_row10">
-                        <label class="form-check-label" for="radio3_row10">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row10" value="C" id="radio4_row10">
-                        <label class="form-check-label" for="radio4_row10">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row10" value="CF" id="radio5_row10">
-                        <label class="form-check-label" for="radio5_row10">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">10 - Prefiro deixar as opções em aberto que planejar tudo com antecedência.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row10" value="DF" id="radio1_row10"
+                                   required>
+                            <label class="form-check-label" for="radio1_row10">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row10" value="D" id="radio2_row10"
+                                   required>
+                            <label class="form-check-label" for="radio2_row10">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row10" value="N" id="radio3_row10"
+                                   required>
+                            <label class="form-check-label" for="radio3_row10">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row10" value="C" id="radio4_row10"
+                                   required>
+                            <label class="form-check-label" for="radio4_row10">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row10" value="CF" id="radio5_row10"
+                                   required>
+                            <label class="form-check-label" for="radio5_row10">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">11 - Raramente me sinto só ou triste.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row11" value="DF" id="radio1_row11">
-                        <label class="form-check-label" for="radio1_row11">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row11" value="D" id="radio2_row11">
-                        <label class="form-check-label" for="radio2_row11">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row11" value="N" id="radio3_row11">
-                        <label class="form-check-label" for="radio3_row11">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row11" value="C" id="radio4_row11">
-                        <label class="form-check-label" for="radio4_row11">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row11" value="CF" id="radio5_row11">
-                        <label class="form-check-label" for="radio5_row11">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">11 - Raramente me sinto só ou triste.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row11" value="DF" id="radio1_row11"
+                                   required>
+                            <label class="form-check-label" for="radio1_row11">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row11" value="D" id="radio2_row11"
+                                   required>
+                            <label class="form-check-label" for="radio2_row11">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row11" value="N" id="radio3_row11"
+                                   required>
+                            <label class="form-check-label" for="radio3_row11">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row11" value="C" id="radio4_row11"
+                                   required>
+                            <label class="form-check-label" for="radio4_row11">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row11" value="CF" id="radio5_row11"
+                                   required>
+                            <label class="form-check-label" for="radio5_row11">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">12 - Sou dominador(a), firme e assertivo(a).</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row12" value="DF" id="radio1_row12">
-                        <label class="form-check-label" for="radio1_row12">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row12" value="D" id="radio2_row12">
-                        <label class="form-check-label" for="radio2_row12">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row12" value="N" id="radio3_row12">
-                        <label class="form-check-label" for="radio3_row12">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row12" value="C" id="radio4_row12">
-                        <label class="form-check-label" for="radio4_row12">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row12" value="CF" id="radio5_row12">
-                        <label class="form-check-label" for="radio5_row12">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">12 - Sou dominador(a), firme e assertivo(a).</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row12" value="DF" id="radio1_row12"
+                                   required>
+                            <label class="form-check-label" for="radio1_row12">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row12" value="D" id="radio2_row12"
+                                   required>
+                            <label class="form-check-label" for="radio2_row12">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row12" value="N" id="radio3_row12"
+                                   required>
+                            <label class="form-check-label" for="radio3_row12">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row12" value="C" id="radio4_row12"
+                                   required>
+                            <label class="form-check-label" for="radio4_row12">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row12" value="CF" id="radio5_row12"
+                                   required>
+                            <label class="form-check-label" for="radio5_row12">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">13 - Sem emoções fortes a vida não teria muita graça para mim.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row13" value="DF" id="radio1_row13">
-                        <label class="form-check-label" for="radio1_row13">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row13" value="D" id="radio2_row13">
-                        <label class="form-check-label" for="radio2_row13">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row13" value="N" id="radio3_row13">
-                        <label class="form-check-label" for="radio3_row13">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row13" value="C" id="radio4_row13">
-                        <label class="form-check-label" for="radio4_row13">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row13" value="CF" id="radio5_row13">
-                        <label class="form-check-label" for="radio5_row13">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">13 - Sem emoções fortes a vida não teria muita graça para mim.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row13" value="DF" id="radio1_row13"
+                                   required>
+                            <label class="form-check-label" for="radio1_row13">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row13" value="D" id="radio2_row13"
+                                   required>
+                            <label class="form-check-label" for="radio2_row13">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row13" value="N" id="radio3_row13"
+                                   required>
+                            <label class="form-check-label" for="radio3_row13">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row13" value="C" id="radio4_row13"
+                                   required>
+                            <label class="form-check-label" for="radio4_row13">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row13" value="CF" id="radio5_row13"
+                                   required>
+                            <label class="form-check-label" for="radio5_row13">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">14 - Algumas pessoas pensam que sou invejoso(a) e egoísta.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row14" value="DF" id="radio1_row14">
-                        <label class="form-check-label" for="radio1_row14">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row14" value="D" id="radio2_row14">
-                        <label class="form-check-label" for="radio2_row14">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row14" value="N" id="radio3_row14">
-                        <label class="form-check-label" for="radio3_row14">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row14" value="C" id="radio4_row14">
-                        <label class="form-check-label" for="radio4_row14">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row14" value="CF" id="radio5_row14">
-                        <label class="form-check-label" for="radio5_row14">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">14 - Algumas pessoas pensam que sou invejoso(a) e egoísta.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row14" value="DF" id="radio1_row14"
+                                   required>
+                            <label class="form-check-label" for="radio1_row14">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row14" value="D" id="radio2_row14"
+                                   required>
+                            <label class="form-check-label" for="radio2_row14">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row14" value="N" id="radio3_row14"
+                                   required>
+                            <label class="form-check-label" for="radio3_row14">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row14" value="C" id="radio4_row14"
+                                   required>
+                            <label class="form-check-label" for="radio4_row14">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row14" value="CF" id="radio5_row14"
+                                   required>
+                            <label class="form-check-label" for="radio5_row14">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">15 - Tento cumprir todas as minhas obrigações com responsabilidade.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row15" value="DF" id="radio1_row15">
-                        <label class="form-check-label" for="radio1_row15">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row15" value="D" id="radio2_row15">
-                        <label class="form-check-label" for="radio2_row15">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row15" value="N" id="radio3_row15">
-                        <label class="form-check-label" for="radio3_row15">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row15" value="C" id="radio4_row15">
-                        <label class="form-check-label" for="radio4_row15">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row15" value="CF" id="radio5_row15">
-                        <label class="form-check-label" for="radio5_row15">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">15 - Tento cumprir todas as minhas obrigações com responsabilidade.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row15" value="DF" id="radio1_row15"
+                                   required>
+                            <label class="form-check-label" for="radio1_row15">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row15" value="D" id="radio2_row15"
+                                   required>
+                            <label class="form-check-label" for="radio2_row15">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row15" value="N" id="radio3_row15"
+                                   required>
+                            <label class="form-check-label" for="radio3_row15">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row15" value="C" id="radio4_row15"
+                                   required>
+                            <label class="form-check-label" for="radio4_row15">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row15" value="CF" id="radio5_row15"
+                                   required>
+                            <label class="form-check-label" for="radio5_row15">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">16 - Ao lidar com as outras pessoas sempre tenho medo de fazer alguma coisa errada.
-                </th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row16" value="DF" id="radio1_row16">
-                        <label class="form-check-label" for="radio1_row16">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row16" value="D" id="radio2_row16">
-                        <label class="form-check-label" for="radio2_row16">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row16" value="N" id="radio3_row16">
-                        <label class="form-check-label" for="radio3_row16">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row16" value="C" id="radio4_row16">
-                        <label class="form-check-label" for="radio4_row16">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row16" value="CF" id="radio5_row16">
-                        <label class="form-check-label" for="radio5_row16">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">16 - Ao lidar com as outras pessoas sempre tenho medo de fazer alguma coisa
+                        errada.
+                    </th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row16" value="DF" id="radio1_row16"
+                                   required>
+                            <label class="form-check-label" for="radio1_row16">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row16" value="D" id="radio2_row16"
+                                   required>
+                            <label class="form-check-label" for="radio2_row16">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row16" value="N" id="radio3_row16"
+                                   required>
+                            <label class="form-check-label" for="radio3_row16">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row16" value="C" id="radio4_row16"
+                                   required>
+                            <label class="form-check-label" for="radio4_row16">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row16" value="CF" id="radio5_row16"
+                                   required>
+                            <label class="form-check-label" for="radio5_row16">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">17 - Gosto de realizar as coisas com calma.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row17" value="DF" id="radio1_row17">
-                        <label class="form-check-label" for="radio1_row17">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row17" value="D" id="radio2_row17">
-                        <label class="form-check-label" for="radio2_row17">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row17" value="N" id="radio3_row17">
-                        <label class="form-check-label" for="radio3_row17">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row17" value="C" id="radio4_row17">
-                        <label class="form-check-label" for="radio4_row17">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row17" value="CF" id="radio5_row17">
-                        <label class="form-check-label" for="radio5_row17">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">17 - Gosto de realizar as coisas com calma.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row17" value="DF" id="radio1_row17"
+                                   required>
+                            <label class="form-check-label" for="radio1_row17">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row17" value="D" id="radio2_row17"
+                                   required>
+                            <label class="form-check-label" for="radio2_row17">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row17" value="N" id="radio3_row17"
+                                   required>
+                            <label class="form-check-label" for="radio3_row17">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row17" value="C" id="radio4_row17"
+                                   required>
+                            <label class="form-check-label" for="radio4_row17">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row17" value="CF" id="radio5_row17"
+                                   required>
+                            <label class="form-check-label" for="radio5_row17">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">18 - Sou bastante agarrado(a) às minhas próprias maneiras de agir.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row18" value="DF" id="radio1_row18">
-                        <label class="form-check-label" for="radio1_row18">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row18" value="D" id="radio2_row 18">
-                        <label class="form-check-label" for="radio2_row 18">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row18" value="N" id="radio3_row18">
-                        <label class="form-check-label" for="radio3_row18">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row18" value="C" id="radio4_row18">
-                        <label class="form-check-label" for="radio4_row18">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row18" value="CF" id="radio5_row18">
-                        <label class="form-check-label" for="radio5_row18">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">18 - Sou bastante agarrado(a) às minhas próprias maneiras de agir.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row18" value="DF" id="radio1_row18"
+                                   required>
+                            <label class="form-check-label" for="radio1_row18">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row18" value="D" id="radio2_row 18"
+                                   required>
+                            <label class="form-check-label" for="radio2_row 18">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row18" value="N" id="radio3_row18"
+                                   required>
+                            <label class="form-check-label" for="radio3_row18">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row18" value="C" id="radio4_row18"
+                                   required>
+                            <label class="form-check-label" for="radio4_row18">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row18" value="CF" id="radio5_row18"
+                                   required>
+                            <label class="form-check-label" for="radio5_row18">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">19 - Prefiro colaborar com as outras pessoas a competir com elas.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row19" value="DF" id="radio1_row19">
-                        <label class="form-check-label" for="radio1_row19">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row19" value="D" id="radio2_row19">
-                        <label class="form-check-label" for="radio2_row19">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row19" value="N" id="radio3_row19">
-                        <label class="form-check-label" for="radio3_row19">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row19" value="C" id="radio4_row19">
-                        <label class="form-check-label" for="radio4_row19">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row19" value="CF" id="radio5_row19">
-                        <label class="form-check-label" for="radio5_row19">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">19 - Prefiro colaborar com as outras pessoas a competir com elas.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row19" value="DF" id="radio1_row19"
+                                   required>
+                            <label class="form-check-label" for="radio1_row19">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row19" value="D" id="radio2_row19"
+                                   required>
+                            <label class="form-check-label" for="radio2_row19">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row19" value="N" id="radio3_row19"
+                                   required>
+                            <label class="form-check-label" for="radio3_row19">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row19" value="C" id="radio4_row19"
+                                   required>
+                            <label class="form-check-label" for="radio4_row19">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row19" value="CF" id="radio5_row19"
+                                   required>
+                            <label class="form-check-label" for="radio5_row19">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">20 - Sou despreocupado(a) e pouco determinado(a).</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row20" value="DF" id="radio1_row20">
-                        <label class="form-check-label" for="radio1_row20">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row20" value="D" id="radio2_row20">
-                        <label class="form-check-label" for="radio2_row20">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row20" value="N" id="radio3_row20">
-                        <label class="form-check-label" for="radio3_row20">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row20" value="C" id="radio4_row20">
-                        <label class="form-check-label" for="radio4_row20">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row20" value="CF" id="radio5_row20">
-                        <label class="form-check-label" for="radio5_row20">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">20 - Sou despreocupado(a) e pouco determinado(a).</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row20" value="DF" id="radio1_row20"
+                                   required>
+                            <label class="form-check-label" for="radio1_row20">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row20" value="D" id="radio2_row20"
+                                   required>
+                            <label class="form-check-label" for="radio2_row20">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row20" value="N" id="radio3_row20"
+                                   required>
+                            <label class="form-check-label" for="radio3_row20">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row20" value="C" id="radio4_row20"
+                                   required>
+                            <label class="form-check-label" for="radio4_row20">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row20" value="CF" id="radio5_row20"
+                                   required>
+                            <label class="form-check-label" for="radio5_row20">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">21 - Raramente me excedo em qualquer coisa.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row21" value="DF" id="radio1_row21">
-                        <label class="form-check-label" for="radio1_row21">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row21" value="D" id="radio2_row21">
-                        <label class="form-check-label" for="radio2_row21">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row21" value="N" id="radio3_row21">
-                        <label class="form-check-label" for="radio3_row21">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row21" value="C" id="radio4_row21">
-                        <label class="form-check-label" for="radio4_row21">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row21" value="CF" id="radio5_row21">
-                        <label class="form-check-label" for="radio5_row21">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">21 - Raramente me excedo em qualquer coisa.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row21" value="DF" id="radio1_row21"
+                                   required>
+                            <label class="form-check-label" for="radio1_row21">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row21" value="D" id="radio2_row21"
+                                   required>
+                            <label class="form-check-label" for="radio2_row21">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row21" value="N" id="radio3_row21"
+                                   required>
+                            <label class="form-check-label" for="radio3_row21">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row21" value="C" id="radio4_row21"
+                                   required>
+                            <label class="form-check-label" for="radio4_row21">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row21" value="CF" id="radio5_row21"
+                                   required>
+                            <label class="form-check-label" for="radio5_row21">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">22 - Sinto, muitas vezes, forte necessidade de me divertir.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row22" value="DF" id="radio1_row22">
-                        <label class="form-check-label" for="radio1_row22">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row22" value="D" id="radio2_row22">
-                        <label class="form-check-label" for="radio2_row22">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row22" value="N" id="radio3_row22">
-                        <label class="form-check-label" for="radio3_row22">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row22" value="C" id="radio4_row22">
-                        <label class="form-check-label" for="radio4_row22">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row22" value="CF" id="radio5_row22">
-                        <label class="form-check-label" for="radio5_row22">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">22 - Sinto, muitas vezes, forte necessidade de me divertir.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row22" value="DF" id="radio1_row22"
+                                   required>
+                            <label class="form-check-label" for="radio1_row22">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row22" value="D" id="radio2_row22"
+                                   required>
+                            <label class="form-check-label" for="radio2_row22">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row22" value="N" id="radio3_row22"
+                                   required>
+                            <label class="form-check-label" for="radio3_row22">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row22" value="C" id="radio4_row22"
+                                   required>
+                            <label class="form-check-label" for="radio4_row22">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row22" value="CF" id="radio5_row22"
+                                   required>
+                            <label class="form-check-label" for="radio5_row22">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">23 - Muitas vezes, sinto prazer em brincar com teorias e ideias abstratas.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row23" value="DF" id="radio1_row23">
-                        <label class="form-check-label" for="radio1_row23">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row23" value="D" id="radio2_row23">
-                        <label class="form-check-label" for="radio2_row23">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row23" value="N" id="radio3_row23">
-                        <label class="form-check-label" for="radio3_row23">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row23" value="C" id="radio4_row23">
-                        <label class="form-check-label" for="radio4_row23">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row23" value="CF" id="radio5_row23">
-                        <label class="form-check-label" for="radio5_row23">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">23 - Muitas vezes, sinto prazer em brincar com teorias e ideias abstratas.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row23" value="DF" id="radio1_row23"
+                                   required>
+                            <label class="form-check-label" for="radio1_row23">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row23" value="D" id="radio2_row23"
+                                   required>
+                            <label class="form-check-label" for="radio2_row23">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row23" value="N" id="radio3_row23"
+                                   required>
+                            <label class="form-check-label" for="radio3_row23">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row23" value="C" id="radio4_row23"
+                                   required>
+                            <label class="form-check-label" for="radio4_row23">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row23" value="CF" id="radio5_row23"
+                                   required>
+                            <label class="form-check-label" for="radio5_row23">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             <tr>
-                <th scope="row-12">24 - Não me incomodo de me vangloriar de meus talentos e sucessos.</th>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row24" value="DF" id="radio1_row24">
-                        <label class="form-check-label" for="radio1_row24">
-                            DF
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row24" value="D" id="radio2_row24">
-                        <label class="form-check-label" for="radio2_row24">
-                            D
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row24" value="N" id="radio3_row24">
-                        <label class="form-check-label" for="radio3_row24">
-                            N
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row24" value="C" id="radio4_row24">
-                        <label class="form-check-label" for="radio4_row24">
-                            C
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="row24" value="CF" id="radio5_row24">
-                        <label class="form-check-label" for="radio5_row24">
-                            CF
-                        </label>
-                    </div>
-                </td>
+                <div class="form-group">
+                    <th scope="row-12">24 - Não me incomodo de me vangloriar de meus talentos e sucessos.</th>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row24" value="DF" id="radio1_row24"
+                                   required>
+                            <label class="form-check-label" for="radio1_row24">
+                                DF
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row24" value="D" id="radio2_row24"
+                                   required>
+                            <label class="form-check-label" for="radio2_row24">
+                                D
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row24" value="N" id="radio3_row24"
+                                   required>
+                            <label class="form-check-label" for="radio3_row24">
+                                N
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row24" value="C" id="radio4_row24"
+                                   required>
+                            <label class="form-check-label" for="radio4_row24">
+                                C
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="row24" value="CF" id="radio5_row24"
+                                   required>
+                            <label class="form-check-label" for="radio5_row24">
+                                CF
+                            </label>
+                        </div>
+                    </td>
+                    <div class="help-block with-errors"></div>
+                </div>
             </tr>
             </tbody>
         </table>
         <button class="btn btn-primary" type="submit">Gerar PDF</button>
     </form>
 </div>
+<script src="js/validator.min.js"></script>
 </body>
 </html>

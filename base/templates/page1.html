@@ -3,7 +3,7 @@
 {% block conteudo %}
     <!-- tabela -->
     <div class="container">
-        <form action="{% url 'respostas_teste' %}" method="POST" data-toggle="validator">
+        <form action="{% url 'page2' %}" method="POST" data-toggle="validator">
             {% csrf_token %}
             <table class="table">
                 <thead class="thead-light">
@@ -1262,7 +1262,7 @@
                 </tr>
                 </tbody>
             </table>
-            <button class="btn btn-primary" type="submit">Gerar PDF</button>
+            <button class="btn btn-primary" type="submit">Próximo ></button>
         </form>
     </div>
     <script src="js/validator.min.js"></script>

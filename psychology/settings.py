@@ -125,6 +125,8 @@ if AWS_ACCESS_KEY_ID:
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
 
+    TEMPLATE_PATH = os.path.join(BASE_DIR, 'static/files/neo_form.pdf')
+    OUTPUT_PATH = os.path.join(BASE_DIR, 'static/files/neo_resp.pdf')
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

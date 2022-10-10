@@ -1,10 +1,17 @@
 import os
 from django.shortcuts import HttpResponse, render
 from base.apps import write_pdf
+from decouple import config
 
 DIR_BASE = os.path.dirname(__file__)
 TEMPLATE_PATH = os.path.join(DIR_BASE, 'static\\files\\neo_form.pdf')
 OUTPUT_PATH = os.path.join(DIR_BASE, 'static\\files\\neo_resp.pdf')
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=None)
+
+if AWS_ACCESS_KEY_ID:
+    TEMPLATE_PATH = os.path.join(DIR_BASE, 'static/files/neo_form.pdf')
+    OUTPUT_PATH = os.path.join(DIR_BASE, 'static/files/neo_resp.pdf')
 
 
 def home(request):

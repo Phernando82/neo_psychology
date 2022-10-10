@@ -1,38 +1,15 @@
+{%  extends 'base/base.html' %}
 {% load static %}
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Teste Psicologia</title>
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-</head>
-
-<body>
-<!-- cabeçalho -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Teste de personalidade</a>
-            </nav>
-        </div>
-    </div>
-</div>
-<!-- tabela -->
+{% block conteudo %}
+    <!-- tabela -->
 <div class="container">
     <form action="{% url 'respostas_teste' %}" method="POST" data-toggle="validator">
         {% csrf_token %}
         <table class="table">
             <thead class="thead-light">
             <tr>
-                <th scope="col">DF &nbsp; Discordo Fortemente &nbsp; &nbsp; &nbsp; D &nbsp; Discordo &nbsp; &nbsp;
-                    &nbsp; N &nbsp; Neutro
-                    &nbsp; &nbsp; &nbsp; C &nbsp; Concordo &nbsp; &nbsp; &nbsp; CF &nbsp; Concordo Fortemente
+                <th scope="row"><a>DF &nbsp; Discordo Fortemente &nbsp &nbsp;&nbsp; </a><a>D &nbsp; Discordo &nbsp &nbsp; &nbsp;
+                     </a><a>N &nbsp; Neutro &nbsp &nbsp &nbsp; </a><a>C &nbsp; Concordo &nbsp &nbsp; &nbsp; </a><a>CF &nbsp Concordo Fortemente</a>
                 </th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -1273,5 +1250,6 @@
     </form>
 </div>
 <script src="js/validator.min.js"></script>
-</body>
-</html>
+ <!-- fim da tabela -->
+{% endblock %}
+

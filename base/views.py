@@ -11,6 +11,10 @@ def home(request):
     return render(request, 'base/home.html')
 
 
+def page1(request):
+    return render(request, 'page1.html')
+
+
 def respostas_teste(request):
     data_dict = {
         'row_1': request.POST.get('row1'),
@@ -51,5 +55,3 @@ def download_pdf_file(request):
     response['Content-Type'] = 'application/pdf'
     response['Content-Disposition'] = "attachment; file_name =% s " % file_name
     return response
-
-

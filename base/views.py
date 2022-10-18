@@ -22,7 +22,7 @@ data_dict = {}
 
 
 def page1(request):
-    data_dict['row_1'] = request.POST.get('row1')
+    request.session['row_1'] = request.POST.get('row1')
     data_dict['row_2'] = request.POST.get('row2')
     data_dict['row_3'] = request.POST.get('row3')
     data_dict['row_4'] = request.POST.get('row4')
@@ -274,6 +274,7 @@ def page9(request):
 
 
 def respostas_teste(request):
+    request.session['row_1'] = request.POST.get('row1')
     data_dict['row_217'] = request.POST.get('row217')
     data_dict['row_218'] = request.POST.get('row218')
     data_dict['row_219'] = request.POST.get('row219')
@@ -298,7 +299,7 @@ def respostas_teste(request):
     data_dict['row_238'] = request.POST.get('row238')
     data_dict['row_239'] = request.POST.get('row239')
     data_dict['row_240'] = request.POST.get('row240')
-    write_pdf(TEMPLATE_PATH, OUTPUT_PATH, data_dict)
+    write_pdf(TEMPLATE_PATH, OUTPUT_PATH, request.session)
     print(data_dict)
     return render(request, 'respostas_teste.html', context=data_dict)
 

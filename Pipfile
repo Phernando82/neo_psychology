@@ -12,6 +12,7 @@ collectfast = "*"
 dj-database-url = "*"
 pdfrw = "*"
 reportlab = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 flake8 = "*"

@@ -38,7 +38,7 @@ Python 3.x · Django · ReportLab · HTML/CSS · SQLite / PostgreSQL
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USER/personality-inventory
+git clone https://github.com/Phernando82/neo_psychology.git
 cd personality-inventory
 pip install -r requirements.txt
 python manage.py migrate
